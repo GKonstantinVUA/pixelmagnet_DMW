@@ -815,7 +815,7 @@ table {
 .ticker__title:not(:last-child) {
   margin-bottom: 1em
 }
-.box__body {
+.box--running-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1255,12 +1255,12 @@ table {
   height: auto;
   align-self: center
 }
+.indications--setup:not(:last-child) {
+  margin-bottom: clamp(2.813rem,2.057rem + 3.78vw,5.125rem)
+}
 .indications__container {
   display: flex;
   width: 100%
-}
-.indications__container:not(:last-child) {
-  margin-bottom: clamp(2.813rem,2.057rem + 3.78vw,5.125rem)
 }
 .row__body-indication {
   display: flex;
@@ -2037,7 +2037,7 @@ table {
   padding: 1.3125rem 1.375rem
 }
 .radio__label {
-  color: var(---basalt_gray);
+  color: var(--basalt_gray);
   font-size: 1.25rem;
   line-height: 1.7;
   letter-spacing: .0125rem;
@@ -2462,6 +2462,16 @@ table {
   background: var(--denim_blue) url(../img/items_svg/wave_shadow.svg) 0/calc(100% + 2.5rem) repeat-y;
   border-radius: 1.5rem
 }
+.grid-works__thumbs-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: .75rem;
+  -webkit-column-gap: 1.5rem;
+  -moz-column-gap: 1.5rem;
+  column-gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center
+}
 .grid-works__column-work {
   display: flex;
   width: 100%
@@ -2563,16 +2573,6 @@ table {
   width: 2.125rem;
   height: 2.25rem
 }
-.thumbs__area {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: .75rem;
-  -webkit-column-gap: 1.5rem;
-  -moz-column-gap: 1.5rem;
-  column-gap: 1.5rem;
-  justify-content: space-between;
-  align-items: center
-}
 .trumb__inner-thumbnail {
   display: block;
   overflow: hidden;
@@ -2609,7 +2609,7 @@ table {
 .preface-desk__carcase-down {
   display: flex;
   flex-wrap: wrap;
-  align-items: fl;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem
 }
@@ -2629,7 +2629,7 @@ table {
   line-height: 1.2;
   letter-spacing: .0125rem;
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: 1fr;
   -webkit-column-gap: 2.5625rem;
   -moz-column-gap: 2.5625rem;
   column-gap: 2.5625rem
@@ -3389,9 +3389,6 @@ table {
   .publicity__body {
     grid-template-columns: 1fr 1fr
   }
-  .grid-works__column-work {
-    grid-column: span 2
-  }
 }
 @media (max-width:62.31125em) {
   .directions__cell {
@@ -3549,12 +3546,6 @@ table {
   .publicity__body {
     grid-template-columns: 1fr
   }
-  .grid-works__col-work {
-    grid-column: span 2
-  }
-  .thumbs__area {
-    grid-column: span 2
-  }
   .carcase-down__scroll {
     row-gap: .625rem
   }
@@ -3619,6 +3610,11 @@ table {
 @media (max-width:24.375em) {
   .group-articles__content {
     grid-template-columns: repeat(auto-fill,minmax(13.625rem,1fr))
+  }
+}
+@media (min-width:48em) and (max-width:63.125em) {
+  .grid-works__column-work {
+    grid-column: span 2
   }
 }
 @media (any-hover:hover) {
