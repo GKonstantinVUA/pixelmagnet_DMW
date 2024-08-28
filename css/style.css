@@ -1074,7 +1074,8 @@ table {
   justify-content: flex-start;
   -webkit-column-gap: 1.875rem;
   -moz-column-gap: 1.875rem;
-  column-gap: 1.875rem
+  column-gap: 1.875rem;
+  min-height: 37.5rem
 }
 .comment__slide {
   display: flex;
@@ -3339,6 +3340,11 @@ table {
   }
   .menu__item:hover .menu__link {
     color: var(--rich_orange)
+  }
+}
+@media (max-width:77.5625em) {
+  .comment__sliders {
+    min-height: 38.75rem
   }
 }
 @media (max-width:75.875em) {
