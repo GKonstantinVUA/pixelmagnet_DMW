@@ -4135,12 +4135,11 @@
         });
         if (document.querySelector(".comment__sliders")) new swiper_core_Swiper(".comment__sliders", {
             modules: [ Navigation, Pagination ],
-            direction: "vertical",
             observer: true,
             observeParents: true,
             slidesPerView: "auto",
             spaceBetween: 32,
-            autoHeight: true,
+            autoHeight: false,
             speed: 800,
             pagination: {
                 el: ".swiper-pagination",
@@ -4149,6 +4148,18 @@
             navigation: {
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next"
+            },
+            breakpoints: {
+                320: {
+                    direction: "horizontal",
+                    slidesPerView: 1,
+                    spaceBetween: 32
+                },
+                1060: {
+                    direction: "vertical",
+                    slidesPerView: 1,
+                    spaceBetween: 32
+                }
             },
             on: {}
         });
@@ -4411,7 +4422,7 @@
             number: ".js-counter-number"
         };
         const $wrappers = document.querySelectorAll(SELECTORS.wrapper);
-        if (!$wrappers.length) return;
+        if ($wrappers.length === 0) return;
         const TIME_COUNT = 800;
  //! Время счета
                 function counter($wrapper, timeCount) {
