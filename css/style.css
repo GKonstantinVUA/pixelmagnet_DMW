@@ -2993,7 +2993,7 @@ table {
 }
 @media (min-width:66.25em) {
   .comment__wrapper {
-    flex: 0 0 85%
+    flex: 1 0 85%
   }
 }
 @media (min-width:72.625em) {
