@@ -1620,6 +1620,7 @@ table {
   display: block;
   overflow: hidden;
   aspect-ratio: 1300/570;
+  max-width: 81.25rem;
   border-radius: 1.5rem
 }
 .item-article__inner-image:not(:last-child) {
