@@ -458,8 +458,7 @@ table {
 }
 .header {
   border-bottom: .0625rem solid var(--bgheader);
-  background: var(--white);
-  z-index: 10
+  background: var(--white)
 }
 .header__container {
   display: flex;
@@ -2360,8 +2359,7 @@ table {
 .tabs__wrap {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 43.125rem
+  width: 100%
 }
 .tabs__all-content {
   display: flex;
@@ -2397,6 +2395,12 @@ table {
   align-items: center;
   justify-content: center;
   padding-top: 4rem
+}
+.dropdown {
+  z-index: 2
+}
+.dropdown__speaking:not(:last-child) {
+  margin-bottom: 1.9375rem
 }
 .info-card__link-detal {
   display: block;
@@ -2960,6 +2964,11 @@ table {
     max-width: 22.25rem
   }
 }
+@media (min-width:60.5625em) {
+  .dropdown__button {
+    display: none
+  }
+}
 @media (min-width:62.3125em) {
   .directions__cell {
     flex: 0 1 calc((100% - 1.5rem * 2)/ 3)
@@ -3449,6 +3458,58 @@ table {
     display: flex;
     align-items: center;
     justify-content: center
+  }
+}
+@media (max-width:60.56125em) {
+  .dropdown {
+    position: relative;
+    width: 100%
+  }
+  .dropdown__button {
+    max-width: 19.9375rem;
+    border-radius: 3.125rem;
+    border: .0625rem solid var(--linen);
+    background: var(--smoky_white);
+    padding: .3125rem .625rem;
+    color: var(--pearlescent_light_gray);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative
+  }
+  .dropdown__button::after {
+    content: "c";
+    font-family: var(--fontFamilyIconsFont);
+    color: var(--pearlescent_light_gray);
+    font-size: 1rem;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg)
+  }
+  .dropdown__grid {
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition-duration: .4s;
+    background-color: var(--white)
+  }
+  .dropdown__list {
+    overflow: hidden
+  }
+  .dropdown__list-item {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    color: var(--pearlescent_light_gray)
+  }
+}
+@media (max-width:60.62375em) {
+  .dropdown__grid--open {
+    grid-template-rows: 1fr;
+    border: .0625rem solid var(--white_gray);
+    background: var(--smoky_white)
   }
 }
 @media (max-width:58.25em) {

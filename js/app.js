@@ -165,7 +165,8 @@
                 tabsContentItem.hidden = !tabsTitles[index].classList.contains("_tab-active");
             }));
         }
-        function setTabsStatus(tabsBlock) {
+        //!Додавання функціоналу для Show More & Tabs
+                function setTabsStatus(tabsBlock) {
             let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-title]");
             let tabsContent = tabsBlock.querySelectorAll("[data-tabs-item]");
             const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
@@ -183,6 +184,7 @@
                         if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
                     } else if (tabsBlockAnimate) _slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
                 }));
+                showMore.initShowMore();
             }
         }
         function setTabsAction(e) {
@@ -196,12 +198,14 @@
                     tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_tab-active") : null;
                     tabTitle.classList.add("_tab-active");
                     setTabsStatus(tabsBlock);
+                    setActiveTitle(tabTitle);
                 }
                 e.preventDefault();
             }
         }
     }
-    function menuInit() {
+    //! Модуль перехода Tabs в Select
+        function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
                 bodyLockToggle();
@@ -215,23 +219,27 @@
             const showMoreBlocks = document.querySelectorAll("[data-showmore]");
             let showMoreBlocksRegular;
             let mdQueriesArray;
-            if (showMoreBlocks.length) {
-                showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
-                    return !item.dataset.showmoreMedia;
-                }));
-                showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
-                document.addEventListener("click", showMoreActions);
-                window.addEventListener("resize", showMoreActions);
-                mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
-                if (mdQueriesArray && mdQueriesArray.length) {
-                    mdQueriesArray.forEach((mdQueriesItem => {
-                        mdQueriesItem.matchMedia.addEventListener("change", (function() {
-                            initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-                        }));
+            function initShowMore() {
+                if (showMoreBlocks.length) {
+                    showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
+                        return !item.dataset.showmoreMedia;
                     }));
-                    initItemsMedia(mdQueriesArray);
+                    showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                    document.addEventListener("click", showMoreActions);
+                    window.addEventListener("resize", showMoreActions);
+                    mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+                    if (mdQueriesArray && mdQueriesArray.length) {
+                        mdQueriesArray.forEach((mdQueriesItem => {
+                            mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                                initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                            }));
+                        }));
+                        initItemsMedia(mdQueriesArray);
+                    }
                 }
             }
+            initShowMore();
+            showMore.initShowMore = initShowMore;
             function initItemsMedia(mdQueriesArray) {
                 mdQueriesArray.forEach((mdQueriesItem => {
                     initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
@@ -271,11 +279,28 @@
                 let hiddenHeight = 0;
                 const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
                 const rowGap = parseFloat(getComputedStyle(showMoreContent).rowGap) ? parseFloat(getComputedStyle(showMoreContent).rowGap) : 0;
+                const columnGap = parseFloat(getComputedStyle(showMoreContent).columnGap) ? parseFloat(getComputedStyle(showMoreContent).columnGap) : 0;
+                const containerWidth = showMoreContent.getBoundingClientRect().width;
+                let summWidth = 0;
+                const rows = [];
+                let newRow = [];
+                [ ...showMoreContent.children ].forEach((it => {
+                    const nextWidth = it.getBoundingClientRect().width + summWidth + (newRow.length > 0 ? columnGap : 0);
+                    if (nextWidth > containerWidth) {
+                        summWidth = it.getBoundingClientRect().width;
+                        rows.push(newRow);
+                        newRow = [ it ];
+                    } else {
+                        newRow.push(it);
+                        summWidth = nextWidth;
+                    }
+                }));
+                if (newRow.length) rows.push(newRow);
                 if (showMoreType === "items") {
                     const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : rowsCount;
-                    const showMoreItems = showMoreContent.children;
-                    for (let index = 0; index < showMoreItems.length; index++) {
-                        const showMoreItem = showMoreItems[index];
+                    showMoreContent.children;
+                    for (let index = 0; index < rows.length; index++) {
+                        const showMoreItem = rows[index][0];
                         const marginTop = parseFloat(getComputedStyle(showMoreItem).marginTop) ? parseFloat(getComputedStyle(showMoreItem).marginTop) : 0;
                         const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
                         if (index == showMoreTypeValue) break;

@@ -5,11 +5,11 @@
 	<title>Projects</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<meta name="description" content="Author: Garshin K. V. Enter Text">
+	<meta name="description" content="AAuthor: Garshin K. V. Site Pixel Magnet">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240828122846">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240901163405">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240828122846">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240901163405">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -104,26 +104,49 @@
 			</div>
 
 			<!-- TODO Block Projects -->
-			<div class="tabs tabs--setup" data-tabs="768" data-tabs-animate="1000">
+			<div class="tabs tabs--setup" data-tabs data-tabs-animate="1000">
 
 				<div class="tabs__container">
-					<nav class="tabs__navigation" data-tabs-titles>
-						<button type="button" class="tabs__title _tab-active">All</button>
-						<button type="button" class="tabs__title">Branding</button>
-						<button type="button" class="tabs__title">UX/UI Design</button>
-						<button type="button" class="tabs__title">App Development</button>
-						<button type="button" class="tabs__title">Web Development</button>
-						<button type="button" class="tabs__title">Digital Transformation</button>
-					</nav>
+					<div class="dropdown dropdown__speaking">
+						<button class="dropdown__button">All</button>
+						<div class="dropdown__grid">
+							<nav class="tabs__navigation dropdown__list" data-tabs-titles>
+								<button type="button" class="tabs__title dropdown__list-item _tab-active">All</button>
+								<button type="button" class="tabs__title dropdown__list-item">Branding</button>
+								<button type="button" class="tabs__title dropdown__list-item">UX/UI Design</button>
+								<button type="button" class="tabs__title dropdown__list-item">App Development</button>
+								<button type="button" class="tabs__title dropdown__list-item">Web Development</button>
+								<button type="button" class="tabs__title dropdown__list-item">Digital Transformation</button>
+							</nav>
+						</div>
+					</div>
 
-					<!-- <nav class="tabs__nav-select" id="block__select-nav" name="name__select-nav-category" required data-tabs-titles>
-						<option selected value="all-nav" class="tabs__caption-nav">All</option>
-						<option value="branding-nav" class="tabs__caption-nav">Branding</option>
-						<option value="ux_ui_design-nav" class="tabs__caption-nav">UX/UI Design</option>
-						<option value="app_development-nav" class="tabs__caption-nav">App Development</option>
-						<option value="web_development-nav" class="tabs__caption-nav">Web Development</option>
-						<option value="digital_transformation-nav" class="tabs__caption-nav">Digital Transformation</option>
-					</nav> -->
+					<script>
+						const dropDownButton = document.querySelector('.dropdown__button');
+						const dropDownGrid = document.querySelector('.dropdown__grid');
+						const dropDownList = document.querySelector('.dropdown__list');
+
+						const setActiveTitle = (tab) => {
+							const tabActive = tab || document.querySelector('._tab-active');
+							dropDownButton.textContent = tabActive.textContent;
+						}
+
+						dropDownButton.addEventListener('click', () => {
+							dropDownGrid.classList.contains('dropdown__grid--open') ?
+								dropDownGrid.classList.remove('dropdown__grid--open') :
+								dropDownGrid.classList.add('dropdown__grid--open');
+						});
+
+						[...dropDownList.children].forEach((item) => {
+							item.addEventListener('click', () => {
+								if (dropDownGrid.classList.contains('dropdown__grid--open')) {
+									dropDownGrid.classList.remove('dropdown__grid--open');
+								}
+							})
+						})
+						setActiveTitle();
+					</script>
+
 
 					<!-- *General container with categories -->
 					<div class="tabs__content" data-tabs-body>
@@ -1545,7 +1568,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240828122846"></script>
+	<script src="js/app.min.js?_v=20240901163405"></script>
 </body>
 
 </html>
