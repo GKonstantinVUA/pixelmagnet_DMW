@@ -4491,6 +4491,16 @@
         rootMargin: "0px",
         threshold: 1
     });
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu__link");
+    menuLinks.forEach((link => {
+        if (link.getAttribute("href") === currentPage) link.classList.add("active");
+    }));
+    const currentPageProjects = window.location.pathname.split("/").pop();
+    const menuLinksProjects = document.querySelectorAll(".tabs__title");
+    menuLinksProjects.forEach((link => {
+        if (link.getAttribute("href") === currentPageProjects) link.classList.add("active");
+    }));
     window["FLS"] = false;
     menuInit();
     tabs();

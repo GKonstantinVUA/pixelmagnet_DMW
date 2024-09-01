@@ -538,6 +538,10 @@ table {
   position: relative;
   transition: all .3s ease
 }
+.menu__link.active {
+  color: var(--denim_blue);
+  font-weight: 700
+}
 .footer {
   background: #222;
   color: var(--white)
@@ -2965,6 +2969,10 @@ table {
   }
 }
 @media (min-width:60.5625em) {
+  ._tab-active {
+    color: var(--rich_orange);
+    text-decoration: underline
+  }
   .dropdown__button {
     display: none
   }
