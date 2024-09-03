@@ -916,7 +916,7 @@ body::after {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   -o-object-position: center 35%;
   object-position: center 35%;
   z-index: -1
@@ -1101,7 +1101,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 548/600;
-  border-radius: 24px
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .favorites__img {
   width: 100%;
@@ -1183,7 +1183,7 @@ body::after {
   aspect-ratio: 238/163;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: clamp(.625rem,.503rem + .61vw,1rem);
   width: 100%;
   height: 100%;
   max-width: 14.875rem
@@ -1199,7 +1199,7 @@ body::after {
   gap: 1.5rem
 }
 .directions__cell {
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   border: .0625rem solid var(--denim_blue);
   background: var(--bgCardDirections);
   padding: 1.5rem;
@@ -1420,7 +1420,7 @@ body::after {
   object-fit: cover;
   width: 100%;
   max-width: 31.3125rem;
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   height: auto;
   align-self: center
 }
@@ -1577,7 +1577,7 @@ body::after {
 .content__main-img {
   overflow: hidden;
   display: block;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .content__main-img:not(:last-child) {
   margin-bottom: clamp(1.5rem,1.051rem + 2.24vw,2.875rem)
@@ -1611,7 +1611,7 @@ body::after {
 .member-team__wrap {
   display: block;
   overflow: hidden;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .member-team__pic {
   width: 100%;
@@ -1681,7 +1681,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 1300/570;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .hero-box__poster {
   width: 100%;
@@ -1781,7 +1781,7 @@ body::after {
   overflow: hidden;
   aspect-ratio: 1300/570;
   max-width: 81.25rem;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .item-article__inner-image:not(:last-child) {
   margin-bottom: 2.625rem
@@ -1853,7 +1853,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 628/572;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .item-inner__photo {
   -webkit-transform: scale(1);
@@ -2116,7 +2116,7 @@ body::after {
 .field__textarea {
   min-height: 10.3125rem;
   padding: 1.0625rem 1.25rem;
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   border: .0625rem solid var(--linen);
   background: var(--smoky_white);
   color: var(--pearlescent_light_gray);
@@ -2368,13 +2368,13 @@ body::after {
 .main__grid-box {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 1.5rem
+  row-gap: clamp(.75rem,.505rem + 1.22vw,1.5rem)
 }
 .grid-box__row-pics {
   display: grid;
-  -webkit-column-gap: 1.5rem;
-  -moz-column-gap: 1.5rem;
-  column-gap: 1.5rem
+  -webkit-column-gap: clamp(.75rem,.505rem + 1.22vw,1.5rem);
+  -moz-column-gap: clamp(.75rem,.505rem + 1.22vw,1.5rem);
+  column-gap: clamp(.75rem,.505rem + 1.22vw,1.5rem)
 }
 .grid-box__row-pics:nth-child(odd) {
   grid-template-columns: 2fr 1fr
@@ -2388,7 +2388,7 @@ body::after {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
+  border-radius: clamp(.625rem,.339rem + 1.43vw,1.5rem)
 }
 .grid-box__image-small {
   aspect-ratio: 500/510;
@@ -2396,7 +2396,7 @@ body::after {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
+  border-radius: clamp(.625rem,.339rem + 1.43vw,1.5rem)
 }
 .comment__body {
   display: flex;
@@ -2545,7 +2545,7 @@ body::after {
 }
 .tabs__sell-card {
   border: .125rem solid transparent;
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   padding: .5rem;
   transition: all .25s ease-in;
   flex: 0 0 calc((100% - 1.5rem * 2)/ 3);
@@ -2579,7 +2579,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 410/440;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .info-card__img-project {
   width: 100%;
@@ -2640,7 +2640,7 @@ body::after {
   height: 100%;
   width: 100%;
   background: var(--denim_blue) url(../img/items_svg/wave_shadow.svg) 0/calc(100% + 2.5rem) repeat-y;
-  border-radius: 1.5rem
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .grid-works__thumbs-area {
   display: grid;
@@ -2674,7 +2674,7 @@ body::after {
 }
 .grid-works__listing {
   flex-grow: 1;
-  border-radius: 1.5rem;
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem);
   background: var(--rich_orange);
   color: var(--white);
   font-size: 1rem;
@@ -2757,7 +2757,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 238/238;
-  border-radius: clamp(1rem,.837rem + .82vw,1.5rem)
+  border-radius: clamp(.75rem,.505rem + 1.22vw,1.5rem)
 }
 .trumb__unit {
   width: 100%;
@@ -4097,7 +4097,7 @@ body::after {
   .tabs__sell-card:hover {
     border: .125rem solid var(--denim_blue);
     background-color: var(--smoky_white);
-    border-radius: 1.5rem
+    border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
   }
   .tabs__btn-view {
     cursor: pointer
