@@ -3167,7 +3167,8 @@ body::after {
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     align-items: flex-start;
-    justify-content: space-between
+    justify-content: space-between;
+    min-height: 22.1875rem
   }
   .block__desk {
     max-width: 52.0625rem
