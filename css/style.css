@@ -1726,9 +1726,6 @@ body::after {
   line-height: 1.7;
   letter-spacing: .015rem
 }
-.favorites__wrapper {
-  padding-left: 15px
-}
 .favorites__slide--article {
   display: flex;
   height: 100%;
@@ -1738,7 +1735,7 @@ body::after {
   display: block;
   overflow: hidden;
   aspect-ratio: 628/572;
-  border-radius: 24px
+  border-radius: clamp(.875rem,.671rem + 1.02vw,1.5rem)
 }
 .favorites__picture {
   width: 100%;
@@ -3546,6 +3543,9 @@ body::after {
   }
 }
 @media (max-width:72.5em) {
+  .favorites__wrapper {
+    padding-left: clamp(1rem,-.524rem + 7.62vw,5rem)
+  }
   .branding__wrapper {
     padding-left: clamp(.938rem,-.134rem + 5.36vw,3.75rem)
   }
