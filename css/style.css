@@ -1074,10 +1074,9 @@ body::after {
   margin-bottom: clamp(3.438rem,1.54rem + 9.49vw,9.25rem)
 }
 .favorites__slider {
-  padding: 0 5.625rem;
   max-width: 62.5rem;
   margin: 0 auto;
-  padding: 0 .9375rem;
+  padding: 0 clamp(1.125rem,-.28rem + 7.03vw,4.375rem);
   -webkit-transform: translateX(-7vw);
   transform: translateX(-7vw);
   clip-path: polygon(0 0,100vw 0,100vw 100%,0 100%)
@@ -1728,7 +1727,7 @@ body::after {
   letter-spacing: .015rem
 }
 .favorites__wrapper {
-  padding-left: clamp(1rem,-.882rem + 9.41vw,5rem)
+  padding-left: 15px
 }
 .favorites__slide--article {
   display: flex;
@@ -2335,7 +2334,7 @@ body::after {
   flex: 0 0 .1875rem
 }
 .intelligence--setup:not(:last-child) {
-  margin-bottom: 9rem
+  margin-bottom: clamp(3.438rem,1.621rem + 9.08vw,9rem)
 }
 .level__up:not(:last-child) {
   margin-bottom: 2.875rem
@@ -2364,7 +2363,7 @@ body::after {
   max-width: 14.875rem
 }
 .collection--setup:not(:last-child) {
-  margin-bottom: 8rem
+  margin-bottom: clamp(3.438rem,1.948rem + 7.45vw,8rem)
 }
 .main__grid-box {
   display: grid;
@@ -2830,7 +2829,6 @@ body::after {
   color: var(--basalt_gray)
 }
 .branding__slider {
-  padding: 0 5.625rem;
   max-width: 62.5rem;
   margin: 0 auto;
   padding: 0 .9375rem;

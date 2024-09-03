@@ -4421,15 +4421,15 @@
             breakpoints: {
                 30: {
                     slidesPerView: 1.15,
-                    spaceBetween: 32
+                    spaceBetween: 20
                 },
                 768: {
                     slidesPerView: 1.25,
-                    spaceBetween: 32
+                    spaceBetween: 20
                 },
                 1268: {
                     slidesPerView: 1.5,
-                    spaceBetween: 32
+                    spaceBetween: 20
                 }
             },
             on: {}
