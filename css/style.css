@@ -3570,6 +3570,9 @@ body::after {
   }
 }
 @media (max-width:66.24875em) {
+  .comment__management-elements {
+    padding-top: 2.25rem
+  }
   .comment__btn-slider {
     font-size: clamp(1.875rem,1.514rem + .75vw,2.125rem);
     width: clamp(3.75rem,2.487rem + 2.63vw,4.625rem);
@@ -3783,7 +3786,7 @@ body::after {
     flex-direction: column;
     row-gap: 1.5rem
   }
-  .comment__management-elements {
+  .comment__btn-slider {
     display: none
   }
   .author__inner-img {
@@ -3893,11 +3896,6 @@ body::after {
 @media (max-width:24.375em) {
   .group-articles__content {
     grid-template-columns: repeat(auto-fill,minmax(13.625rem,1fr))
-  }
-}
-@media (min-width:48em) and (max-width:66.24875em) {
-  .comment__management-elements {
-    padding-top: 2.25rem
   }
 }
 @media (min-width:48em) and (max-width:63.125em) {
