@@ -7,43 +7,79 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="AAuthor: Garshin K. V. Site Pixel Magnet">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240901170622">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240903092312">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240901170622">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240903092312">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">a
+						<!-- <svg class="popup__svg" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#4D240D" stroke-linecap="square" />
+					<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#4D240D" stroke-linecap="square" />
+				</svg> -->
+					</button>
+					<div class="popup__text">
+						<form class="popup__form" action="#" method="GET" enctype="multipart/form-data">
+
+							<h1 class="popup__title-question">Do you have questions?</h1>
+
+							<label for="popup__username" class="popup__name-user-label popup__setup-cell">Name
+								<input id="popup__username" type="text" class="popup__name-user-input" name="user-name-input-popup" placeholder="Enter your name" required>
+							</label>
+
+							<label for="popup__field-phone" class="popup__label-phone-user popup__setup-cell">Phone
+								<input id="popup__field-phone" type="tel" pattern="\+?[0-9\s\-\(\)]+" class="popup__input-field" name="phone-field-popup" placeholder="Enter your phone number">
+							</label>
+
+							<label for="popup__mail-field" class="popup__label-field-user popup__setup-cell">Email
+								<input id="popup__mail-field" type="email" class="popup__mail-field" name="mail-name-popup" placeholder="Enter your email" required>
+							</label>
+
+							<label class="popup__textarea-label popup__setup-cell">Question
+								<textarea class="popup__textarea" name="textarea-question" placeholder="Question" autocomplete="off" required></textarea>
+							</label>
+
+							<button type="submit" class="popup__question-form-btn">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<header data-lp class="header header--option">
 			<div class="header__container">
 
 
-				<div class="header__logo">Pixelmagnet</div>
+				<h1 class="header__logo"><a class="header__link-logo" href="index.html">Pixelmagnet</a></h1>
 
 
 				<div class="menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="index.html" target="_blank" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
 
-							<li class="menu__item"><a href="about.html" target="_blank" class="menu__link">About us</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About us</a></li>
 
-							<li class="menu__item"><a href="service.html" target="_blank" class="menu__link">Service</a></li>
+							<li class="menu__item"><a href="service.html" class="menu__link">Service</a></li>
 
-							<li class="menu__item"><a href="projects.html" target="_blank" class="menu__link">Projects</a></li>
+							<li class="menu__item"><a href="projects.html" class="menu__link">Projects</a></li>
 
-							<li class="menu__item"><a href="blog.html" target="_blank" class="menu__link">Blog</a></li>
+							<li class="menu__item"><a href="blog.html" class="menu__link">Blog</a></li>
 
-							<li class="menu__item"><a href="contact.html" target="_blank" class="menu__link">Contact us</a></li>
+							<li class="menu__item"><a href="contact.html" class="menu__link">Contact us</a></li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="header__group-btn">
-					<button type="button" class="header__lets-talk" data-da=".menu__body,530">Let’s talk</button>
+					<button type="button" data-popup="#popup" class="header__lets-talk" data-da=".menu__body,530">Let’s talk</button>
 					<button type="button" class="header__icon icon-menu" aria-label="Burger Menu"><span></span></button>
 				</div>
 
@@ -58,9 +94,9 @@
 					<div class="hero-box__hat">
 
 						<div class="hero-box__aside">
-							<h1 class="hero-box__title">Introducing: A brand new Dribbble for designers</h1>
+							<h1 class="hero-box__title">Blueprint fidelity: between paper prototype and finished product</h1>
 							<h2 class="hero-box__subtitle">Article</h2>
-							<div class="hero-box__info">Sept, 24 2023 • 3 min read</div>
+							<div class="hero-box__info">Oct, 10 2024 • 10 min read</div>
 						</div>
 
 						<div class="right-col">
@@ -74,7 +110,7 @@
 					</div>
 
 					<div class="hero-box__inner-image">
-						<img src="img/blog_page/brand_house.webp" alt="Brand House" class="hero-box__poster" width="1300" height="570">
+						<img src="img/blog_page/nature.webp" alt="Brand House" class="hero-box__poster" width="1300" height="570">
 					</div>
 				</div>
 			</section>
@@ -83,25 +119,23 @@
 			<article class="holder-article holder-article--setup">
 				<div class="holder-article__subcontainer">
 					<div class="holder-article__paragraphs">
-						<p>In the ever-evolving landscape of digital creativity, there's a new star on the horizon, poised to revolutionize how designers, artists, and creatives showcase their work to the world. If you've been following the creative scene, you've likely heard of Dribbble, the platform that has long been a go-to for professionals and enthusiasts to share their design projects, gain inspiration, and connect with fellow creatives. But now, there's a brand-new player in town, and it's bringing fresh features and possibilities to the table.</p>
-						<h4 class="holder-article__cap">Introducing the New Kid on the Block</h4>
-						<p>Much like Dribbble, this new portfolio platform offers a sleek, user-friendly interface that makes uploading and showcasing your work a breeze. But where it truly shines is in its commitment to innovation and addressing some of the limitations creatives have faced on existing platforms.</p>
-						<h4 class="holder-article__cap">1. A Focus on Inclusivity</h4>
-						<p>While Dribbble has been known for its invite-only system, this new platform is embracing inclusivity from the start. It welcomes all creatives, regardless of their experience level, background, or network connections. This open-door policy fosters a diverse and vibrant creative community where talent is celebrated without the barriers of exclusivity.</p>
-						<h4 class="holder-article__cap">2. Enhanced Project Presentation</h4>
-						<p>One standout feature of this new platform is its emphasis on comprehensive project presentation. Users can upload multiple images and videos per project, offering a more holistic view of their work. This richer project documentation allows creatives to tell a more complete story about their design process, from concept to execution.</p>
-						<h4 class="holder-article__cap">3. Seamless Collaboration</h4>
-						<p>While Dribbble has mainly been a showcase platform, this new contender encourages collaboration. Creatives can form teams, join forces on projects, and even offer their services for freelance opportunities. It's not just about showcasing work; it's about facilitating connections and collaboration within the creative community.</p>
+						<p>In today's digital age, user interface (UI) design plays a pivotal role in creating successful and engaging software applications and websites. A well-designed UI not only enhances the user experience but also contributes to the overall success and adoption of a product. If you're new to UI design or looking to improve your skills, this article will provide you with a comprehensive guide on how to begin your journey into the world of user interface design.</p>
+						<h4 class="holder-article__cap">Introducing</h4>
+						<p>In today's digital age, user interface (UI) design plays a pivotal role in creating successful and engaging software applications and websites. A well-designed UI not only enhances the user experience but also contributes to the overall success and adoption of a product. If you're new to UI design or looking to improve your skills, this article will provide you with a comprehensive guide on how to begin your journey into the world of user interface design.</p>
+						<h4 class="holder-article__cap">1. Understanding User Interface Design</h4>
+						<p>User interface design involves creating visually appealing and functional interfaces that enable users to interact with digital products seamlessly. It encompasses various elements such as layout, typography, color schemes, icons, and interactive elements. The primary goal of UI design is to create an intuitive and user-friendly interface that guides users through their digital experience while aligning with the brand's aesthetics and objectives.</p>
+						<h4 class="holder-article__cap">2. Conclusion</h4>
+						<p>User interface design involves creating visually appealing and functional interfaces that enable users to interact with digital products seamlessly. It encompasses various elements such as layout, typography, color schemes, icons, and interactive elements. The primary goal of UI design is to create an intuitive and user-friendly interface that guides users through their digital experience while aligning with the brand's aesthetics and objectives.</p>
+						<h4 class="holder-article__cap">3. What does a career in web design involve?</h4>
+						<p>A career in website design can involve the design, creation, and coding of a range of website types. Other tasks will typically include liaising with clients and discussing website specifications, incorporating feedback, working on graphic design and image editing, and enabling multimedia features such as audio and video. Requiring a range of creative and technical skills, web designers may be involved in work across a range of industries, including software companies, IT consultancies, web design companies, corporate organizations, and more. In contrast with web developers, web designers tend to play a more creative role, crafting the overall vision and design of a site, and determining how to best incorporate the necessary functionality. However, there can be significant overlap between the roles.</p>
 						<h4 class="holder-article__cap">4. Learning and Resources</h4>
 						<p>Beyond portfolios, this platform is also becoming a valuable resource hub for creatives. Users can share design resources, tutorials, and insights, making it a one-stop-shop for both showcasing work and expanding one's creative knowledge.
 						</p>
-						<h4 class="holder-article__cap">5. Enhanced Discoverability</h4>
-						<p>The platform utilizes advanced algorithms to suggest relevant content to users. This means that as a creative, you're more likely to discover projects and talents that resonate with your interests. It's a fantastic way to keep the inspiration flowing.
+						<h4 class="holder-article__cap">5. Full-stack, back-end, and front-end web development</h4>
+						<p>The U.S. Bureau of Labor Statistics (BLS) Occupational Outlook Handbook tends to group web developers and digital designers into one category. However, they define them separately, stating that web developers create and maintain websites and are responsible for the technical aspects including performance and capacity. Web or digital designers, on the other hand, are responsible for the look and functionality of websites and interfaces. They develop, create, and test the layout, functions, and navigation for usability. Web developers can focus on the back-end, front-end, or full-stack development, and typically utilize a range of programming languages, libraries, and frameworks to do so. Web designers may work more closely with front-end engineers to establish the user-end functionality and appearance of a site..
 						</p>
-						<h4 class="holder-article__cap">Looking Ahead</h4>
-						<p>While this new platform is gaining traction and excitement, it's still in its early stages. Much like Dribbble, it will evolve over time as it responds to the needs and feedback of its user base. But its commitment to inclusivity, collaboration, and comprehensive project presentation is a promising sign that it will continue to reshape the digital portfolio landscape.
-						</p>
-						<p>In conclusion, the arrival of a brand-new portfolio platform, with a fresh take on creativity and collaboration, is an exciting development for the design and creative community. As it gains momentum, it's worth keeping an eye on how this platform will shape the future of digital creativity and portfolio sharing, possibly giving established players like Dribbble a run for their money. So, if you're a creative looking for a new space to showcase your work and connect with like-minded individuals, the future looks bright with this innovative newcomer on the scene.</p>
+						<h4 class="holder-article__cap">Are web designers in demand in 2024?</h4>
+						<p>In our ever-increasingly digital environment, there is a constant need for websites—and therefore for web designers and developers. With 17.4 billion websites in existence as of January 2020, the demand for web developers is only expected to rise.Web designers with significant coding experience are typically in higher demand, and can usually expect a higher salary. Like all jobs, there are likely to be a range of opportunities, some of which are better paid than others. But certain skill sets are basic to web design, most of which are key to how to become a web designer in 2022.</p>
 					</div>
 				</div>
 			</article>
@@ -374,7 +408,7 @@
 
 					<div class="high-level__body">
 						<div class="high-level__left-col left-col">
-							<h2 class="left-col__title">Pixelmagnet</h2>
+							<h2 class="left-col__title"><a class="left-col__comp-link" href="index.html">Pixelmagnet</a></h2>
 							<div class="left-col__location location">
 								<div class="location__column">
 									<div class="location__title">Jakarta, id</div>
@@ -395,10 +429,10 @@
 
 						<div class="high-level__right-col right-col">
 							<ul class="right-col__item-list">
-								<li class="right-col__jump"><a class="right-col__link" href="#">Service</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">About</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">Projects</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">Blog</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="service.html">Service</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="about.html">About us</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="projects.html">Projects</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="blog.html">Blog</a></li>
 							</ul>
 							<ul class="right-col__item-list">
 								<li class="right-col__jump"><a class="right-col__link" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
@@ -425,7 +459,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240901170622"></script>
+	<script src="js/app.min.js?_v=20240903092312"></script>
 </body>
 
 </html>

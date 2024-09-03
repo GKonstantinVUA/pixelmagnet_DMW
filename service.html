@@ -7,43 +7,79 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="AAuthor: Garshin K. V. Site Pixel Magnet">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240901170622">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240903092312">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240901170622">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/css/intlTelInput.css?_v=20240903092312">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">a
+						<!-- <svg class="popup__svg" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#4D240D" stroke-linecap="square" />
+					<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#4D240D" stroke-linecap="square" />
+				</svg> -->
+					</button>
+					<div class="popup__text">
+						<form class="popup__form" action="#" method="GET" enctype="multipart/form-data">
+
+							<h1 class="popup__title-question">Do you have questions?</h1>
+
+							<label for="popup__username" class="popup__name-user-label popup__setup-cell">Name
+								<input id="popup__username" type="text" class="popup__name-user-input" name="user-name-input-popup" placeholder="Enter your name" required>
+							</label>
+
+							<label for="popup__field-phone" class="popup__label-phone-user popup__setup-cell">Phone
+								<input id="popup__field-phone" type="tel" pattern="\+?[0-9\s\-\(\)]+" class="popup__input-field" name="phone-field-popup" placeholder="Enter your phone number">
+							</label>
+
+							<label for="popup__mail-field" class="popup__label-field-user popup__setup-cell">Email
+								<input id="popup__mail-field" type="email" class="popup__mail-field" name="mail-name-popup" placeholder="Enter your email" required>
+							</label>
+
+							<label class="popup__textarea-label popup__setup-cell">Question
+								<textarea class="popup__textarea" name="textarea-question" placeholder="Question" autocomplete="off" required></textarea>
+							</label>
+
+							<button type="submit" class="popup__question-form-btn">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<header data-lp class="header header--option">
 			<div class="header__container">
 
 
-				<div class="header__logo">Pixelmagnet</div>
+				<h1 class="header__logo"><a class="header__link-logo" href="index.html">Pixelmagnet</a></h1>
 
 
 				<div class="menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="index.html" target="_blank" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
 
-							<li class="menu__item"><a href="about.html" target="_blank" class="menu__link">About us</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About us</a></li>
 
-							<li class="menu__item"><a href="service.html" target="_blank" class="menu__link">Service</a></li>
+							<li class="menu__item"><a href="service.html" class="menu__link">Service</a></li>
 
-							<li class="menu__item"><a href="projects.html" target="_blank" class="menu__link">Projects</a></li>
+							<li class="menu__item"><a href="projects.html" class="menu__link">Projects</a></li>
 
-							<li class="menu__item"><a href="blog.html" target="_blank" class="menu__link">Blog</a></li>
+							<li class="menu__item"><a href="blog.html" class="menu__link">Blog</a></li>
 
-							<li class="menu__item"><a href="contact.html" target="_blank" class="menu__link">Contact us</a></li>
+							<li class="menu__item"><a href="contact.html" class="menu__link">Contact us</a></li>
 						</ul>
 					</nav>
 				</div>
 
 				<div class="header__group-btn">
-					<button type="button" class="header__lets-talk" data-da=".menu__body,530">Let’s talk</button>
+					<button type="button" data-popup="#popup" class="header__lets-talk" data-da=".menu__body,530">Let’s talk</button>
 					<button type="button" class="header__icon icon-menu" aria-label="Burger Menu"><span></span></button>
 				</div>
 
@@ -911,7 +947,7 @@
 					<div class="magnetize__container">
 						<div class="magnetize__inner">
 							<h2 class="magnetize__title">Let's <strong class="magnetize__word">magnetize</strong> your online presence with our creative prowess and expert strategies</h2>
-							<button type="button" class="magnetize__lets-talk">let's-talk</button>
+							<button type="button" data-popup="#popup" class="magnetize__lets-talk">let's-talk</button>
 						</div>
 
 					</div>
@@ -926,7 +962,7 @@
 
 					<div class="high-level__body">
 						<div class="high-level__left-col left-col">
-							<h2 class="left-col__title">Pixelmagnet</h2>
+							<h2 class="left-col__title"><a class="left-col__comp-link" href="index.html">Pixelmagnet</a></h2>
 							<div class="left-col__location location">
 								<div class="location__column">
 									<div class="location__title">Jakarta, id</div>
@@ -947,10 +983,10 @@
 
 						<div class="high-level__right-col right-col">
 							<ul class="right-col__item-list">
-								<li class="right-col__jump"><a class="right-col__link" href="#">Service</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">About</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">Projects</a></li>
-								<li class="right-col__jump"><a class="right-col__link" href="#">Blog</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="service.html">Service</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="about.html">About us</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="projects.html">Projects</a></li>
+								<li class="right-col__jump"><a class="right-col__link" href="blog.html">Blog</a></li>
 							</ul>
 							<ul class="right-col__item-list">
 								<li class="right-col__jump"><a class="right-col__link" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
@@ -977,7 +1013,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240901170622"></script>
+	<script src="js/app.min.js?_v=20240903092312"></script>
 </body>
 
 </html>
