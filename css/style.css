@@ -1764,7 +1764,7 @@ body::after {
   transition: all .3s ease-in
 }
 .blog--setup:not(:last-child) {
-  margin-bottom: clamp(3.438rem,2.028rem + 7.05vw,7.313rem)
+  margin-bottom: clamp(2.188rem,-.029rem + 11.08vw,7.313rem)
 }
 .blog__text-box {
   display: flex;
