@@ -2645,10 +2645,10 @@ body::after {
 .grid-works__thumbs-area {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: .75rem;
-  -webkit-column-gap: 1.5rem;
-  -moz-column-gap: 1.5rem;
-  column-gap: 1.5rem;
+  row-gap: clamp(.75rem,.668rem + .41vw,1rem);
+  -webkit-column-gap: clamp(.75rem,.668rem + .41vw,1rem);
+  -moz-column-gap: clamp(.75rem,.668rem + .41vw,1rem);
+  column-gap: clamp(.75rem,.668rem + .41vw,1rem);
   justify-content: space-between;
   align-items: center
 }
