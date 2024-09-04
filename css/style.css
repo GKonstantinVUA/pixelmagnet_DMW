@@ -123,12 +123,7 @@
   --bg_letter: #EA4846;
   --fonBurgerMenu: #a9d0ff;
   --fillItemSvg: rgba(255, 255, 255, 0.15);
-  --bgCardDirections: rgba(21, 106, 212, 0.10);
-  --marquee-width: 1300px;
-  --marquee-elements-displayed: 10;
-  --marquee-elements: 7;
-  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-  --marquee-animation-duration: calc(var(--marquee-elements) * 2s)
+  --bgCardDirections: rgba(21, 106, 212, 0.10)
 }
 * {
   padding: 0;
@@ -976,7 +971,7 @@ body::after {
   font-size: clamp(1rem,.918rem + .41vw,1.25rem)
 }
 .ticker--setup:not(:last-child) {
-  margin-bottom: clamp(3.125rem,1.513rem + 8.06vw,8.063rem)
+  margin-bottom: clamp(3.438rem,1.907rem + 7.65vw,8.125rem)
 }
 .ticker__title {
   text-align: center;
@@ -987,56 +982,34 @@ body::after {
 .ticker__title:not(:last-child) {
   margin-bottom: 1em
 }
-.box--running-line {
+.box {
   display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: uppercase;
-  -webkit-column-gap: 1.8125rem;
-  -moz-column-gap: 1.8125rem;
-  column-gap: 1.8125rem;
   overflow: hidden
 }
+.box .box__running-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase
+}
 .box__item {
-  flex: 0 1 284px;
   font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
   font-size: clamp(1.375rem,.844rem + 2.65vw,3rem);
   white-space: nowrap;
+  flex: 1 0 clamp(7.5rem,4.235rem + 16.33vw,17.5rem);
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
-  -webkit-animation: scrolling var(--marquee-animation-duration) linear infinite;
-  animation: scrolling var(--marquee-animation-duration) linear infinite
+  align-items: center
 }
 .box__item:nth-child(odd) {
   color: var(--basalt_gray)
 }
 .box__item:nth-child(even) {
   color: var(--rich_orange)
-}
-@-webkit-keyframes scrolling {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-  }
-  100% {
-    -webkit-transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
-    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)))
-  }
-}
-@keyframes scrolling {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-  }
-  100% {
-    -webkit-transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
-    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)))
-  }
 }
 .swiper-scrollbar {
   width: 100%;
@@ -3415,12 +3388,6 @@ body::after {
 @media (max-width:83em) {
   .counters__container {
     justify-content: center
-  }
-}
-@media (max-width:1100px) {
-  :root {
-    --marquee-width: 100svw;
-    --marquee-animation-duration: calc(var(--marquee-elements) * 1s)
   }
 }
 @media (max-width:80.75em) {

@@ -4821,13 +4821,39 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const root = document.documentElement;
-    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-    const marqueeContent = document.querySelector(".box__body");
-    if (marqueeContent) {
-        root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-        for (let i = 0; i < marqueeElementsDisplayed; i++) marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-    }
+    document.addEventListener("DOMContentLoaded", (function() {
+        const pageTrusted = document.querySelector(".ticker");
+        const menuList = document.querySelector(".box .box__running-line");
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const gap = 0 * remInPixels;
+        const menuItems = menuList.innerHTML;
+        menuList.innerHTML += menuItems;
+        const scrollSpeed = 1.5;
+        let scrollPosition = 0;
+        let isPaused = false;
+        let isInViewport = false;
+        function marquee() {
+            if (!isPaused && isInViewport) {
+                scrollPosition += scrollSpeed;
+                if (scrollPosition >= menuList.scrollWidth / 2 + gap) scrollPosition = 0;
+                menuList.style.transform = `translateX(-${scrollPosition}px)`;
+            }
+            requestAnimationFrame(marquee);
+        }
+        const observer = new IntersectionObserver((entries => {
+            entries.forEach((entry => {
+                isInViewport = entry.isIntersecting;
+            }));
+        }));
+        observer.observe(pageTrusted);
+        menuList.addEventListener("mouseenter", (() => {
+            isPaused = true;
+        }));
+        menuList.addEventListener("mouseleave", (() => {
+            isPaused = false;
+        }));
+        marquee();
+    }));
     document.addEventListener("DOMContentLoaded", (function() {
         let input = document.querySelector("#field__phone");
         if (input) {
@@ -4852,57 +4878,6 @@
             });
         }
     }));
-    function counterNumbers() {
-        const SELECTORS = {
-            wrapper: ".js-counter-numbers-wrapper",
-            numbers: ".js-counter-numbers",
-            number: ".js-counter-number"
-        };
-        const $wrappers = document.querySelectorAll(SELECTORS.wrapper);
-        if ($wrappers.length === 0) return;
-        const TIME_COUNT = 800;
- //! Время счета
-                function counter($wrapper, timeCount) {
-            const $numbers = $wrapper.querySelectorAll(SELECTORS.numbers);
-            if (!$numbers.length) return;
-            const $numbersText = $wrapper.querySelectorAll(SELECTORS.number);
-            const endValues = [];
-            $numbers.forEach(($numberWrapper => {
-                const endValue = parseInt($numberWrapper.dataset.number);
-                endValues.push(endValue);
-            }));
-            const timeStart = performance.now();
-            function showNumbers(currentTime) {
-                let part = (currentTime - timeStart) / timeCount;
-                if (part > 1) part = 1;
-                for (let i = 0; i < $numbersText.length; i++) {
-                    let lang = "";
-                    const ptl = $numbersText[i].closest("[lang]");
-                    if (ptl) lang = ptl.getAttribute("lang");
-                    const form = new Intl.NumberFormat(lang);
-                    const value = Math.round(part * endValues[i]);
-                    $numbersText[i].textContent = form.format(value);
-                }
-                if (part < 1) requestAnimationFrame(showNumbers);
-            }
-            requestAnimationFrame(showNumbers);
-        }
-        $wrappers.forEach(($wrapper => {
-            counter($wrapper, TIME_COUNT);
-        }));
-    }
-    window.addEventListener("load", (() => {
-        counterNumbers();
-    }));
-    new IntersectionObserver((entries => {
-        entries.forEach((entry => {
-            if (entry.isIntersecting) counterNumbers();
-        }));
-    }), {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1
-    });
     const currentPage = window.location.pathname.split("/").pop();
     const menuLinks = document.querySelectorAll(".menu__link");
     menuLinks.forEach((link => {
