@@ -703,6 +703,10 @@ body::after {
   color: var(--denim_blue);
   font-weight: 700
 }
+.active-item {
+  color: var(--denim_blue);
+  font-weight: 700
+}
 .footer {
   background: #222;
   color: var(--white)
