@@ -166,7 +166,7 @@
                 tabsContentItem.hidden = !tabsTitles[index].classList.contains("_tab-active");
             }));
         }
-        //!Додавання функціоналу для Show More & Tabs
+
                 function setTabsStatus(tabsBlock) {
             let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-title]");
             let tabsContent = tabsBlock.querySelectorAll("[data-tabs-item]");
@@ -205,7 +205,7 @@
             }
         }
     }
-    //! Модуль перехода Tabs в Select
+
         const dropDownButton = document.querySelector(".dropdown__button");
     const dropDownGrid = document.querySelector(".dropdown__grid");
     const dropDownList = document.querySelector(".dropdown__list");
@@ -283,7 +283,7 @@
                 const hiddenHeight = getHeight(showMoreBlock, showMoreContent, showLine ? rowsCount : oldLogicCollapseRows);
                 const initialHiddenHeight = getHeight(showMoreBlock, showMoreContent, showLine ? initialRowsCount : oldLogicCollapseRows);
                 if (initialHiddenHeight < getOriginalHeight(showMoreContent)) showMoreButton.hidden = false; else showMoreButton.hidden = true;
-                //!Додавання нового функционалу/коррегування
+
                                 if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) if (showLine) {
                     _slideUp(showMoreContent, showMoreSpeed, Math.min(hiddenHeight, getOriginalHeight(showMoreContent)));
                     showMoreBlock.classList.remove("_showmore-active");
@@ -325,7 +325,7 @@
                         const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
                         if (index == showMoreTypeValue) break;
                         hiddenHeight += showMoreItem.getBoundingClientRect().height + marginTop;
- //!Врахування чіткої висоти
+
                                                 hiddenHeight += marginBottom;
                     }
                     rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
@@ -334,7 +334,7 @@
                     hiddenHeight = showMoreTypeValue;
                 }
                 return Math.round(hiddenHeight);
- //!Врахування чіткої висоти
+
                         }
             function getOriginalHeight(showMoreContent) {
                 let parentHidden;
@@ -4402,7 +4402,7 @@
         });
     }
     function initSliders() {
-        //! Список слайдерів
+
         if (document.querySelector(".favorites__slider")) new swiper_core_Swiper(".favorites__slider", {
             modules: [ Navigation, Scrollbar ],
             observer: true,
@@ -4412,7 +4412,7 @@
             autoHeight: false,
             speed: 800,
             resistanceRatio: 0,
-            //!За необхідності регулування кількосттю пагінаційних елементів
+
             scrollbar: {
                 el: ".swiper-scrollbar",
                 draggable: true,
@@ -4473,7 +4473,7 @@
             autoHeight: false,
             speed: 800,
             resistanceRatio: 0,
-            //!За необхідності регулування кількосттю пагінаційних елементів
+
             scrollbar: {
                 el: ".swiper-scrollbar",
                 draggable: true,
@@ -4504,7 +4504,7 @@
             autoHeight: false,
             speed: 800,
             resistanceRatio: 0,
-            //!За необхідності регулування кількосттю пагінаційних елементів
+ 
             scrollbar: {
                 el: ".app__swiper-scrollbar",
                 draggable: true,
@@ -4535,7 +4535,7 @@
             autoHeight: false,
             speed: 800,
             resistanceRatio: 0,
-            //!За необхідності регулування кількосттю пагінаційних елементів
+
             scrollbar: {
                 el: ".transformation__swiper-scrollbar",
                 draggable: true,
@@ -4566,7 +4566,7 @@
             autoHeight: false,
             speed: 800,
             resistanceRatio: 0,
-            //!За необхідності регулування кількосттю пагінаційних елементів
+
             scrollbar: {
                 el: ".technologies__swiper-scrollbar",
                 draggable: true,
@@ -4869,7 +4869,6 @@
                         callback(data.country);
                     })).catch((function() {
                         callback("gb");
- //! Default to United Kingdom
                                         }));
                 },
                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/21.2.7/js/utils.js",
