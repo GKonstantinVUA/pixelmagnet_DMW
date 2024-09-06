@@ -699,11 +699,7 @@ body::after {
   position: relative;
   transition: all .3s ease
 }
-.menu__link.active {
-  color: var(--denim_blue);
-  font-weight: 700
-}
-.active-item {
+._active-page {
   color: var(--denim_blue);
   font-weight: 700
 }

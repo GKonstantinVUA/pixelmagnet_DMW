@@ -5233,11 +5233,13 @@
             });
         }
     }));
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const menuLinks = document.querySelectorAll(".menu__link");
-    menuLinks.forEach((link => {
-        if (link.getAttribute("href") === currentPage) link.classList.add("active");
-    }));
+    window.onload = () => {
+        const [currentPage] = location.pathname.split("/").slice(-1);
+        const menuLinks = document.querySelectorAll(".menu__link");
+        if (menuLinks.length) menuLinks.forEach((menuLink => {
+            if (menuLink.getAttribute("href") === currentPage) menuLink.classList.add("_active-page");
+        }));
+    };
     const currentPageProjects = window.location.pathname.split("/").pop();
     const menuLinksProjects = document.querySelectorAll(".tabs__title");
     menuLinksProjects.forEach((link => {
